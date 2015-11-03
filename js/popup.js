@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var prefix = 'https:/wakatime.com/api/v1/';
   var rate = 8.50; // what I should get paid the hour :/
-  var rateSign = "€";
+  var rateSign = "&euro;"; 
   // format dates for requests
   var now = new Date();
   var dateFormatted = (now.getMonth() + 1)
