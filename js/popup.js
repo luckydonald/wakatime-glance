@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var prefix = 'https:/wakatime.com/api/v1/';
-
+  var rate = 8.50; // what I should get paid the hour :/
+  var rateSign = "€";
   // format dates for requests
   var now = new Date();
   var dateFormatted = (now.getMonth() + 1)
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
       $("<p>Today: " + dayRes[0].data[0].grand_total.text + "</p>")
         .appendTo("#data");
       $("<p>This Week: " + weekRes[0].data.human_readable_total + "</p>")
+        .appendTo("#data");
+      $("<p>(Week was worth " + ((weekRes[0].data.total_seconds/3600)*rate) + " " + rateSign + ")</p>" )
         .appendTo("#data");
     })
     // if either fails, assume unauthorized.
